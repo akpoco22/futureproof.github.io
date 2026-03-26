@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#ffffff",
+              "surface-container-highest": "#262626",
+              "tertiary-dim": "#2eef00",
+              "tertiary-fixed-dim": "#2eef00",
+              "on-secondary": "#400040",
+              "on-tertiary-fixed-variant": "#0f6700",
+              "tertiary-fixed": "#32ff00",
+              "primary-fixed": "#00f5f5",
+              "on-error": "#490006",
+              "surface-container-low": "#131313",
+              "on-tertiary-fixed": "#074600",
+              "on-secondary-container": "#fff5f9",
+              "inverse-primary": "#006a6a",
+              "on-secondary-fixed": "#620061",
+              "inverse-on-surface": "#565555",
+              "on-primary-fixed-variant": "#006262",
+              "surface-tint": "#c1fffe",
+              "secondary-dim": "#ff51fa",
+              "on-primary-fixed": "#004343",
+              "surface-dim": "#0e0e0e",
+              "secondary-fixed-dim": "#ffa6f3",
+              "secondary": "#ff51fa",
+              "on-tertiary": "#0f6500",
+              "on-error-container": "#ffa8a3",
+              "surface": "#0e0e0e",
+              "surface-bright": "#2c2c2c",
+              "error-dim": "#d7383b",
+              "outline-variant": "#484847",
+              "surface-variant": "#262626",
+              "tertiary": "#b0ff96",
+              "secondary-container": "#a900a9",
+              "background": "#0e0e0e",
+              "surface-container-lowest": "#000000",
+              "surface-container": "#1a1a1a",
+              "on-primary-container": "#005d5d",
+              "tertiary-container": "#32ff00",
+              "on-secondary-fixed-variant": "#920091",
+              "outline": "#767575",
+              "primary-dim": "#00e6e6",
+              "error": "#ff716c",
+              "surface-container-high": "#20201f",
+              "primary-container": "#00ffff",
+              "primary-fixed-dim": "#00e6e6",
+              "on-surface-variant": "#adaaaa",
+              "on-primary": "#006767",
+              "secondary-fixed": "#ffbdf3",
+              "primary": "#c1fffe",
+              "on-tertiary-container": "#0c5c00",
+              "error-container": "#9f0519",
+              "on-background": "#ffffff",
+              "inverse-surface": "#fcf9f8"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(26, 26, 26, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .neon-border-primary:hover {
+        border-color: #c1fffe;
+        box-shadow: 0 0 20px rgba(193, 255, 254, 0.2);
+      }
+      .neon-border-secondary:hover {
+        border-color: #ff51fa;
+        box-shadow: 0 0 20px rgba(255, 81, 250, 0.2);
+      }
+      #mobile-menu {
+        display: none;
+      }
+      #mobile-menu.active {
+        display: block;
+      }
+      .stagger-card {
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary-fixed">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<img src="future_proof/logo2.png" alt="Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_20px_rgba(0,255,255,0.4)]" />
+<!-- Logo remains brand icon as requested, text hidden on smallest screens or kept for brand recognition -->
+<div class="text-xl font-bold tracking-tighter text-white font-headline uppercase hidden lg:block">
+                Future Proof
+            </div>
+</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="font-headline uppercase tracking-widest text-xs text-white/60 hover:text-white transition-colors" href="index.html">Work</a>
+<a class="font-headline uppercase tracking-widest text-xs text-primary border-b border-primary pb-1" href="service.html">Services</a>
+<a class="font-headline uppercase tracking-widest text-xs text-white/60 hover:text-white transition-colors" href="about.html">About</a>
+<a class="font-headline uppercase tracking-widest text-xs text-white/60 hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:block border border-primary/30 text-primary px-6 py-2 font-headline uppercase tracking-widest text-[10px] font-bold active:scale-95 duration-200 transition-all hover:bg-primary hover:text-on-primary-fixed">
+                Hire Me
+            </button>
+<button class="md:hidden text-white p-2" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div class="md:hidden bg-surface-container border-b border-white/5 animate-in slide-in-from-top duration-300" id="mobile-menu">
+<div class="flex flex-col p-8 space-y-6">
+<a class="font-headline uppercase tracking-[0.2em] text-xs text-white/70" href="index.html">Work</a>
+<a class="font-headline uppercase tracking-[0.2em] text-xs text-primary font-bold" href="service.html">Services</a>
+<a class="font-headline uppercase tracking-[0.2em] text-xs text-white/70" href="about.html">About</a>
+<a class="font-headline uppercase tracking-[0.2em] text-xs text-white/70" href="contact.html">Contact</a>
+<button class="bg-primary-container text-on-primary-container px-6 py-4 font-headline uppercase tracking-widest text-xs font-bold w-full">
+                Hire Me
+            </button>
+</div>
+</div>
+</nav>
+<main class="pt-48 pb-32 px-8 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<header class="mb-24">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+<div class="max-w-4xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="h-px w-12 bg-primary"></span>
+<span class="font-headline text-primary text-xs uppercase tracking-[0.4em] font-bold">What we offer</span>
+</div>
+<h1 class="font-headline font-bold text-5xl md:text-8xl tracking-tighter leading-[0.9] uppercase">
+                    Our <span class="text-white/40">Technical</span><br/>
+<span class="text-primary italic">Expertise</span>
+</h1>
+</div>
+<div class="max-w-sm lg:mb-4">
+<p class="text-on-surface-variant font-body text-base leading-relaxed border-l-2 border-white/10 pl-6">
+                    Transforming complex challenges into seamless digital products. We operate at the intersection of design, technology, and strategy.
+                </p>
+</div>
+</div>
+</header>
+<!-- Services Grid - 4 Column Layout -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Service 1: Brand Identity -->
+<div class="group relative flex flex-col bg-surface-container-low border border-white/5 p-8 stagger-card neon-border-primary overflow-hidden">
+<div class="relative z-10 mb-12">
+<div class="flex justify-between items-start mb-16">
+<span class="font-headline text-[10px] text-primary/40 tracking-[0.3em] font-bold">01 // IDENTITY</span>
+<span class="material-symbols-outlined text-primary text-3xl opacity-50 group-hover:opacity-100 transition-opacity" data-icon="fingerprint">fingerprint</span>
+</div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-white mb-4 group-hover:text-primary transition-colors">Brand Identity</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-body">
+                    We build cohesive visual systems that bridge the gap between your brand's vision and its audience.
+                </p>
+</div>
+<div class="mt-auto relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out scale-110 group-hover:scale-100" data-alt="abstract minimalist geometric sculpture with sharp angles and clean lines in a futuristic digital void with cyan lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdlO7UuxTq25p8cs9yroJXRT9s5rmuxboRzCNcRmP0MadMfVrPZXVm_wGEiPlRj3QrwydQDfBuMzxwn7prmZwhUr6eyjXAcI_r6QlbpMH5j6oC6zRl9j61ExtXZKFDcPAJrtM9QeRJsszvfsQxivNAbSL1puwbIb66QXOjdD9CMyrb8hBWbpEoAALSg4a-tVAaRU1pMeUsJlJ8aw5MGT7ELFD60i9MnlzRTy_lwA0LN-g4X1Cp6OZF84LMSjopgdPgjavtIlW1QyQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<!-- Hover Decor -->
+<div class="absolute -bottom-1 -right-1 w-12 h-12 bg-primary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Service 2: UI/UX Design -->
+<div class="group relative flex flex-col bg-surface-container-low border border-white/5 p-8 stagger-card neon-border-secondary overflow-hidden">
+<div class="relative z-10 mb-12">
+<div class="flex justify-between items-start mb-16">
+<span class="font-headline text-[10px] text-secondary/40 tracking-[0.3em] font-bold">02 // EXPERIENCE</span>
+<span class="material-symbols-outlined text-secondary text-3xl opacity-50 group-hover:opacity-100 transition-opacity" data-icon="view_quilt">view_quilt</span>
+</div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-white mb-4 group-hover:text-secondary transition-colors">UI/UX Design</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-body">
+                    Human-centric interfaces engineered for high performance and emotional resonance.
+                </p>
+</div>
+<div class="mt-auto relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out scale-110 group-hover:scale-100" data-alt="ultra modern user interface mockups floating in 3d space with vibrant magenta neon glows and holographic elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9QcZBdVmRtv8LlzP7PXvNd7o6WOn9BnyboK8iiYQ8DST4surmvtKgbEL8AcH2OTPKydB_hmWjkRzH7TplWEsQEQ012Q-0YCCl6wJ8K_rQ-f8NRG8Ce2JpbJdzTUccuK35kueyAGSY8uS6k3-aTLMVqmgqZs87cquiMAwwbNu_u1XksrqLJQDvmeopC_orGBTwE08yuhydPJcYSHJzlfB2B3mdZfCHewiGyS8zAckqqcrlC0b0I-Ngntwcsi9dT0_jGhRUdhalu9s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<!-- Hover Decor -->
+<div class="absolute -bottom-1 -right-1 w-12 h-12 bg-secondary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Service 3: Digital Marketing -->
+<div class="group relative flex flex-col bg-surface-container-low border border-white/5 p-8 stagger-card neon-border-primary overflow-hidden">
+<div class="relative z-10 mb-12">
+<div class="flex justify-between items-start mb-16">
+<span class="font-headline text-[10px] text-primary/40 tracking-[0.3em] font-bold">03 // STRATEGY</span>
+<span class="material-symbols-outlined text-primary text-3xl opacity-50 group-hover:opacity-100 transition-opacity" data-icon="hub">hub</span>
+</div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-white mb-4 group-hover:text-primary transition-colors">Growth Engine</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-body">
+                    Data-driven marketing strategies that amplify your digital footprint and drive conversion.
+                </p>
+</div>
+<div class="mt-auto relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out scale-110 group-hover:scale-100" data-alt="complex network of glowing data lines and nodes resembling a futuristic digital map with cyan energy pulses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7BJCxLZlbzIjM6wKH1OmdJI11K6VwFYcNpmvArcZAmrSvXb43skIdfqqr03D6DZcbxkuUgPoTrxhpZULYxQ7_ul2q069i0SXeinqHZIUIs5PQfJA92BGO3dIfKkBXrBsCjjOe33OwdiKFOf2px5J52Oc5Ce47KtYcbgFkQBZx1gdv4iYzZ9lKp8tg0h6-inuxRMebQbI1oDYTmDfqoza2kEy3NT-HB-ESZta_UeMTCv34lR6UxNjsU8jZ7BJxCw7Xq911GyWAal0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="absolute -bottom-1 -right-1 w-12 h-12 bg-primary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Service 4: Motion Graphics -->
+<div class="group relative flex flex-col bg-surface-container-low border border-white/5 p-8 stagger-card neon-border-secondary overflow-hidden">
+<div class="relative z-10 mb-12">
+<div class="flex justify-between items-start mb-16">
+<span class="font-headline text-[10px] text-secondary/40 tracking-[0.3em] font-bold">04 // MOTION</span>
+<span class="material-symbols-outlined text-secondary text-3xl opacity-50 group-hover:opacity-100 transition-opacity" data-icon="animation">animation</span>
+</div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-white mb-4 group-hover:text-secondary transition-colors">Kinetic Design</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-body">
+                    Dynamic storytelling through motion, adding life and rhythm to digital interactions.
+                </p>
+</div>
+<div class="mt-auto relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out scale-110 group-hover:scale-100" data-alt="swirling liquid metal with magenta and purple reflections creating a sense of fluid motion and high-tech elegance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnPq-llD7ane31T7---CeevTjT2feG2wtY1zVFIMSqm3IbejiHU6JWK-OcBWH4nKKB76yEpvix5yfQL5ab0oEJGUpYjednVswwNVGVuethXCGD88sjKDb79vfPAenNF09XgOa1Sj4hGVPfvHpyMejMiVRfLTXEOXMUtkEIZtlaneASMSG9noKl0IIDYHFks59FDQljmdBmi3RHHqrAy3Vz9-F9tARlLprMEJykf4SMsqlVNLSgFEHGjDwg87n0koboQHMsQVvnhVI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="absolute -bottom-1 -right-1 w-12 h-12 bg-secondary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</section>
+<!-- Professional CTA -->
+<section class="mt-40 border-t border-white/5 pt-20">
+<div class="flex flex-col md:flex-row items-center justify-between gap-16 bg-neutral-900/50 p-12 md:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px]"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-6xl font-bold uppercase leading-tight mb-8">
+                    Let's Build the<br/><span class="text-primary italic">Next Frontier.</span>
+</h2>
+<div class="flex items-center gap-6">
+<a class="bg-white text-black px-10 py-5 font-headline font-bold uppercase tracking-widest text-[10px] hover:bg-primary transition-all duration-300" href="contact.html">
+                        Start Project
+                    </a>
+<a class="text-white/60 hover:text-white font-headline uppercase tracking-widest text-[10px] border-b border-white/20 pb-1" href="index.html">
+                        View Portfolio
+                    </a>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="w-48 h-48 border border-white/10 rounded-full flex items-center justify-center animate-spin-[20s]">
+<span class="material-symbols-outlined text-white/20 text-6xl animate-pulse" data-icon="all_inclusive">all_inclusive</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-16 px-8 mt-20 border-t border-white/5 bg-black/40">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex items-center gap-4">
+<img src="future_proof/logo2.png" alt="Logo" class="w-8 h-8 rounded object-contain" />
+<div class="text-sm font-bold text-white font-headline uppercase tracking-widest">
+                Future Proof
+            </div>
+</div>
+<div class="flex gap-10">
+<a class="font-headline text-[10px] tracking-[0.3em] uppercase text-neutral-500 hover:text-primary transition-colors" href="https://www.instagram.com/great_akp22?igsh=M3R6M2Z3cjVyMnR3">Instagram</a>
+<a class="font-headline text-[10px] tracking-[0.3em] uppercase text-neutral-500 hover:text-primary transition-colors" href="https://dribbble.com/great_akp22">Dribbble</a>
+<a class="font-headline text-[10px] tracking-[0.3em] uppercase text-neutral-500 hover:text-primary transition-colors" href="https://www.linkedin.com/in/great-akp22/">LinkedIn</a>
+</div>
+<div class="font-headline text-[10px] tracking-[0.3em] uppercase text-neutral-600">
+            © 2024 Future Proof // Kinetic Digital Studio
+        </div>
+</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuToggle.querySelector('.material-symbols-outlined');
+
+    menuToggle.addEventListener('click', () => {
+        const isActive = mobileMenu.classList.toggle('active');
+        menuIcon.textContent = isActive ? 'close' : 'menu';
+    });
+</script>
+</body></html>
