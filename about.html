@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | Future Proof - Great Osio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#00e6e6",
+              "on-error-container": "#ffa8a3",
+              "secondary-fixed": "#ffbdf3",
+              "tertiary": "#b0ff96",
+              "error": "#ff716c",
+              "on-surface": "#ffffff",
+              "surface-container-highest": "#262626",
+              "on-tertiary-fixed-variant": "#0f6700",
+              "tertiary-fixed-dim": "#2eef00",
+              "on-secondary": "#400040",
+              "surface-container": "#1a1a1a",
+              "secondary": "#ff51fa",
+              "primary-fixed": "#00f5f5",
+              "error-container": "#9f0519",
+              "secondary-fixed-dim": "#ffa6f3",
+              "surface-dim": "#0e0e0e",
+              "outline-variant": "#484847",
+              "primary-dim": "#00e6e6",
+              "on-secondary-fixed-variant": "#920091",
+              "secondary-container": "#a900a9",
+              "on-error": "#490006",
+              "surface-container-low": "#131313",
+              "surface-container-lowest": "#000000",
+              "inverse-primary": "#006a6a",
+              "inverse-on-surface": "#565555",
+              "on-primary": "#006767",
+              "tertiary-fixed": "#32ff00",
+              "primary": "#c1fffe",
+              "inverse-surface": "#fcf9f8",
+              "on-secondary-fixed": "#620061",
+              "surface-tint": "#c1fffe",
+              "error-dim": "#d7383b",
+              "on-tertiary": "#0f6500",
+              "primary-container": "#00ffff",
+              "surface-container-high": "#20201f",
+              "on-tertiary-fixed": "#074600",
+              "on-surface-variant": "#adaaaa",
+              "tertiary-dim": "#2eef00",
+              "surface": "#0e0e0e",
+              "on-secondary-container": "#fff5f9",
+              "background": "#0e0e0e",
+              "outline": "#767575",
+              "on-primary-container": "#005d5d",
+              "on-primary-fixed": "#004343",
+              "secondary-dim": "#ff51fa",
+              "on-tertiary-container": "#0c5c00",
+              "surface-variant": "#262626",
+              "on-primary-fixed-variant": "#006262",
+              "surface-bright": "#2c2c2c",
+              "on-background": "#ffffff",
+              "tertiary-container": "#32ff00"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #0e0e0e;
+        color: #ffffff;
+      }
+      .glow-text-primary {
+        text-shadow: 0 0 20px rgba(193, 255, 254, 0.4);
+      }
+      .glow-btn-primary:hover {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+      }
+      #mobile-menu {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+      #mobile-menu.hidden {
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      #mobile-menu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-xl no-border bg-gradient-to-b from-black/80 to-transparent shadow-[0_20px_50px_rgba(0,255,255,0.05)]">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<a class="flex items-center gap-3 group" href="index.html">
+<img src="future_proof/logo2.png" alt="Logo" class="w-10 h-10 object-contain transition-transform duration-500 group-hover:rotate-45" />
+<span class="text-2xl font-bold tracking-tighter text-cyan-400 font-headline">Future Proof</span>
+</a>
+<div class="hidden md:flex items-center space-x-12 font-space-grotesk tracking-tight">
+<a class="text-gray-400 hover:text-white transition-colors" href="index.html">Work</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="service.html">Services</a>
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="about.html">About</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary-container text-on-primary-fixed px-6 py-2 font-label font-bold uppercase tracking-widest text-sm hover:scale-95 duration-200 transition-all">
+                <a href="contact.html">Hire Me</a>
+            </button>
+<button class="md:hidden text-white p-2" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Dropdown Menu -->
+<div class="hidden md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-t border-white/10 px-8 py-12 flex flex-col gap-8 shadow-2xl" id="mobile-menu">
+<a class="text-3xl font-headline font-bold text-gray-400 hover:text-cyan-400 transition-colors" href="index.html">Work</a>
+<a class="text-3xl font-headline font-bold text-cyan-400" href="about.html">About</a>
+<a class="text-3xl font-headline font-bold text-gray-400 hover:text-cyan-400 transition-colors" href="service.html">Services</a>
+<a class="text-3xl font-headline font-bold text-gray-400 hover:text-cyan-400 transition-colors" href="contact.html">Contact</a>
+<div class="pt-8 border-t border-white/5">
+<button class="w-full bg-primary-container text-on-primary-fixed py-5 font-label font-bold uppercase tracking-widest text-sm">
+                Hire Me
+            </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 min-h-screen">
+<!-- Hero Asymmetrical Section -->
+<section class="max-w-screen-2xl mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+<!-- Visual Side (Portrait) -->
+<div class="lg:col-span-5 relative group order-2 lg:order-1">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+<div class="relative overflow-hidden aspect-[4/5] rounded-lg border border-white/5">
+<img class="w-full h-full object-cover grayscale contrast-125 brightness-75 transition-transform duration-700 group-hover:scale-105" data-alt="dramatic high-contrast black and white studio portrait of a visionary creative professional with sharp shadows and futuristic atmosphere" src="future_proof/pic 1.png"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-secondary font-bold">Great Osio</span>
+<div class="h-[1px] w-12 bg-secondary mt-2"></div>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Content Side (Typography) -->
+<div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center">
+<header class="mb-12">
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-white">
+                    THE <span class="text-primary glow-text-primary">DIGITAL</span><br/>APERTURE
+                </h1>
+<div class="mt-6 flex items-center gap-4">
+<span class="w-12 h-[2px] bg-primary"></span>
+<p class="font-label text-sm uppercase tracking-widest text-on-surface-variant font-medium">Lead Designer &amp; Founder</p>
+</div>
+</header>
+<div class="space-y-8 max-w-2xl">
+<p class="text-xl md:text-2xl font-light text-on-surface leading-relaxed font-body">
+                    I am the founder and lead designer at Future Proof. My journey started with a deep dive into design fundamentals, eventually mastering the tools needed to bring concepts to life.
+                </p>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    I don't just design for today; I build <span class="text-secondary font-medium italic">vibrant, strategic visual solutions</span> designed to thrive tomorrow. As a visionary designer, I leverage high-frequency neons and brutalist structures to create digital landmarks.
+                </p>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    My mission is to bridge the gap between abstract art and functional commercial strategy. By focusing on the intersection of human emotion and technical precision, I deliver experiences that resonate across the digital void.
+                </p>
+</div>
+<!-- CTA Row -->
+<div class="mt-16 flex flex-wrap items-center gap-8">
+<a href="future_proof/DOCKER.pdf" download="Greatosio_Resume.pdf" class="glow-btn-primary flex items-center gap-3 bg-primary-container text-on-primary-fixed px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm transition-all duration-300 w-fit cursor-pointer">
+    Download Resume
+    <span class="material-symbols-outlined text-lg">download</span>
+</a>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant mb-1">Inquiries</span>
+<a class="font-headline text-lg hover:text-primary transition-colors duration-300" href="mailto:akpososio22@gmail.com">akpososio22@gmail.com</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Milestone Grid -->
+<section class="mt-40 max-w-screen-2xl mx-auto px-8 lg:px-16 pb-32">
+<h2 class="font-headline text-4xl font-bold tracking-tighter mb-12">CORE PILLARS</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="md:col-span-2 bg-surface-container p-10 rounded-lg flex flex-col justify-between group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" data-weight="fill">token</span>
+<div>
+<h3 class="font-headline text-2xl font-bold mb-4">Strategic Visuals</h3>
+<p class="text-on-surface-variant leading-relaxed">Mapping brand DNA into scalable visual systems that command attention in saturated markets.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="md:col-span-1 bg-surface-container-low p-10 rounded-lg flex flex-col items-center justify-center text-center group border border-white/5">
+<div class="text-5xl font-headline font-black text-secondary mb-2">12+</div>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Years of Craft</p>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-1 bg-surface-container p-10 rounded-lg flex flex-col items-center justify-center text-center group">
+<div class="text-5xl font-headline font-black text-primary mb-2">250</div>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Projects Delivered</p>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-4 bg-gradient-to-r from-surface-container to-surface-container-highest p-10 rounded-lg flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="max-w-md">
+<h3 class="font-headline text-2xl font-bold mb-2">Technical Mastery</h3>
+<p class="text-on-surface-variant">Expertise in the full Adobe Suite, Figma, and Webflow to bridge the gap from concept to code.</p>
+</div>
+<div class="flex gap-4 flex-wrap justify-center">
+<span class="px-4 py-2 bg-black/40 rounded-full text-xs font-label uppercase tracking-widest border border-white/10">Figma</span>
+<span class="px-4 py-2 bg-black/40 rounded-full text-xs font-label uppercase tracking-widest border border-white/10">After Effects</span>
+<span class="px-4 py-2 bg-black/40 rounded-full text-xs font-label uppercase tracking-widest border border-white/10">Cinema 4D</span>
+<span class="px-4 py-2 bg-black/40 rounded-full text-xs font-label uppercase tracking-widest border border-white/10">Strategy</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full py-12 px-8 mt-20 border-t border-cyan-500/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-black text-white font-headline">Future Proof</span>
+<p class="font-space-grotesk text-xs tracking-widest uppercase text-neutral-500">© 2024 Future Proof. Built for the Digital Aperture.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-space-grotesk text-xs tracking-widest uppercase text-neutral-500 hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="https://dribbble.com/graet-osio">Dribbble</a>
+<a class="font-space-grotesk text-xs tracking-widest uppercase text-neutral-500 hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="https://www.behance.net/graet-osio">Behance</a>
+<a class="font-space-grotesk text-xs tracking-widest uppercase text-neutral-500 hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="https://www.linkedin.com/in/graet-osio-aa0b051a4?utm_source=share_via&utm_content=profile&utm_medium=member_android">LinkedIn</a>
+<a class="font-space-grotesk text-xs tracking-widest uppercase text-neutral-500 hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="https://www.instagram.com/great_akp22?igsh=M3R6M2Z3cjVyMnR3">Instagram</a>
+</div>
+</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuToggle.querySelector('.material-symbols-outlined');
+
+    menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.add('active');
+            }, 10);
+            menuIcon.textContent = 'close';
+        } else {
+            mobileMenu.classList.remove('active');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            menuIcon.textContent = 'menu';
+        }
+    });
+
+    // Close menu on click outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            menuIcon.textContent = 'menu';
+        }
+    });
+</script>
+</body></html>
